@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/app0/lib2/childlib7",
+  "sourceRoot": "libs/app0/lib2/childlib7/src",
+  "prefix": "largerepo",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/app0/lib2/childlib7"],
+      "options": {
+        "jestConfig": "libs/app0/lib2/childlib7/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/app0/lib2/childlib7/src/**/*.ts",
+          "libs/app0/lib2/childlib7/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
