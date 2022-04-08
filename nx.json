@@ -1,5 +1,5 @@
 {
-  "npmScope": "nx-large-repo",
+  "npmScope": "largerepo",
   "affected": {
     "defaultBase": "main"
   },
@@ -15,14 +15,10 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "nx/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "YmZjN2JiN2ItNmMzYS00YWQzLTgzYjYtNjNiYjNjMGIwZTgwfHJlYWQtd3JpdGU="
       }
     }
   },
