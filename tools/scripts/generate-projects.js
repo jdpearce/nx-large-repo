@@ -2,10 +2,10 @@ const cp = require('child_process');
 const fs = require('fs');
 
 const INIT_APP_INDEX = 0;
-const NUMBER_OF_APPS = 5;
-const NUMBER_OF_LIBS = 10;
+const NUMBER_OF_APPS = 2;
+const NUMBER_OF_LIBS = 5;
 const NUMBER_OF_CHILD_LIBS = 10;
-const NUMBER_OF_COMPONENTS = 50;
+const NUMBER_OF_COMPONENTS = 10;
 
 function generate() {
   const appNames = [];
@@ -14,10 +14,13 @@ function generate() {
     appNames.push(`app${i}`);
   }
 
+  console.log(`Generating ${appNames.length} applications`);
   appNames.forEach((appName) => generateApp(appName));
 }
 
 function generateApp(appName) {
+  console.log(`Generating ${appName}`);
+
   cp.execSync(`npx nx g @nrwl/angular:app ${appName} --no-interactive`);
 
   const libNames = [];
@@ -74,8 +77,10 @@ export class AppModule {}
 }
 
 function generateParentLib(appName, libName) {
+  console.log(`Generating Parent Library ${libName} for ${appName}`);
+
   cp.execSync(
-    `npx nx g @nrwl/angular:lib ${libName} --directory=${appName}/${libName} --simpleModuleName --publishable`
+    `npx nx g @nrwl/angular:lib ${libName} --directory=${appName}/${libName} --simpleModuleName`
   );
 
   const libNames = [];
@@ -84,6 +89,7 @@ function generateParentLib(appName, libName) {
     libNames.push(`childlib${i}`);
   }
 
+  console.log(`Generating ${libNames.length} child libraries`);
   libNames.forEach((childLibName) => {
     generateChildLib(appName, libName, childLibName);
   });
@@ -132,8 +138,10 @@ function generateParentLib(appName, libName) {
 }
 
 function generateChildLib(appName, libName, childLibName) {
+  console.log(`Generating Child Library ${childLibName} for ${libName}`);
+
   cp.execSync(
-    `npx nx g @nrwl/angular:lib ${childLibName} --directory=${appName}/${libName} --simpleModuleName --publishable`
+    `npx nx g @nrwl/angular:lib ${childLibName} --directory=${appName}/${libName} --simpleModuleName`
   );
 
   const componentNames = [];
@@ -142,6 +150,9 @@ function generateChildLib(appName, libName, childLibName) {
     componentNames.push(`${libName}${childLibName}component${i}`);
   }
 
+  console.log(
+    `Generating ${componentNames.length} components for ${childLibName}`
+  );
   componentNames.forEach((componentName) => {
     cp.execSync(
       `npx nx g @nrwl/angular:component ${componentName}  --project=${appName}-${libName}-${childLibName}`
