@@ -1,5 +1,5 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { Lib1childlib1component1Component } from './lib1childlib1component1.component';
 
 describe('Lib1childlib1component1Component', () => {
@@ -9,6 +9,7 @@ describe('Lib1childlib1component1Component', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [Lib1childlib1component1Component],
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   });
 
