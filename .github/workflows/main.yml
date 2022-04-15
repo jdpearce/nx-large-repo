@@ -1,4 +1,4 @@
-name: Naive Lint, Test & Build
+name: Distributed Lint, Test & Build
 
 on:
   push:
@@ -13,35 +13,19 @@ concurrency:
 
 jobs:
   main:
-    runs-on: ubuntu-latest
+    name: Main - Orchestrator
+    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.2
+    with:
+      parallel-commands: |
+        npx nx workspace-lint
+        npx nx format:check
+      parallel-commands-on-agents: |
+        npx nx affected --target=lint --parallel=3
+        npx nx affected --target=test --parallel=3 --ci --code-coverage
+        npx nx affected --target=build --parallel=3
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          # Fetch all branches and commits so that Nx affected has a base to compare against.
-          fetch-depth: 0
-
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v2
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-
-      - run: npm ci
-
-      - name: Workspace Format
-        run: |
-          npx nx workspace-lint
-          npx nx format:check
-
-      - name: Lint Affected
-        run: npx nx affected:lint --parallel=3
-
-      - name: Test Affected
-        run: npx nx affected:test --parallel=3
-
-      - name: Build Affected
-        run: npx nx affected:build --parallel=3
+  agents:
+    name: Agents
+    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.2
+    with:
+      number-of-agents: 3
