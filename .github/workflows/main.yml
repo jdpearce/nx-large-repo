@@ -1,0 +1,42 @@
+name: Naive Lint, Test & Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+# Each push should cancel workflows in progress and start a new one
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          # Fetch all branches and commits so that Nx affected has a base to compare against.
+          fetch-depth: 0
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+
+      - run: npm ci
+
+      - name: Lint
+        run: npx nx affected:lint --parallel=3
+
+      - name: Test
+        run: npx nx affected:test --parallel=3
+
+      - name: Build
+        run: npx nx affected:build --parallel=3
