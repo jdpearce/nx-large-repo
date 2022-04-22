@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { Lib0childlib0component0Component } from './lib0childlib0component0/lib0childlib0component0.component';
 import { Lib0childlib0component1Component } from './lib0childlib0component1/lib0childlib0component1.component';
 import { Lib0childlib0component2Component } from './lib0childlib0component2/lib0childlib0component2.component';
@@ -11,6 +11,8 @@ import { Lib0childlib0component7Component } from './lib0childlib0component7/lib0
 import { Lib0childlib0component8Component } from './lib0childlib0component8/lib0childlib0component8.component';
 import { Lib0childlib0component9Component } from './lib0childlib0component9/lib0childlib0component9.component';
 import { Lib0childlib0parentComponent } from './lib0childlib0parent/lib0childlib0parent.component';
+
+// a small change
 
 @NgModule({
   imports: [CommonModule],
