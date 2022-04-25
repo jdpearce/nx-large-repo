@@ -12,7 +12,7 @@ import { Lib0childlib0component8Component } from './lib0childlib0component8/lib0
 import { Lib0childlib0component9Component } from './lib0childlib0component9/lib0childlib0component9.component';
 import { Lib0childlib0parentComponent } from './lib0childlib0parent/lib0childlib0parent.component';
 
-// a small but insignificant change
+// a small insignificant change (again)
 
 @NgModule({
   imports: [CommonModule],
