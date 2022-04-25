@@ -2,7 +2,6 @@
   "version": 2,
   "projects": {
     "app0": "apps/app0",
-    "app0-e2e": "apps/app0-e2e",
     "app0-lib0-childlib0": "libs/app0/lib0/childlib0",
     "app0-lib0-childlib1": "libs/app0/lib0/childlib1",
     "app0-lib0-childlib2": "libs/app0/lib0/childlib2",
@@ -59,7 +58,6 @@
     "app0-lib4-childlib9": "libs/app0/lib4/childlib9",
     "app0-lib4-lib4": "libs/app0/lib4/lib4",
     "app1": "apps/app1",
-    "app1-e2e": "apps/app1-e2e",
     "app1-lib0-childlib0": "libs/app1/lib0/childlib0",
     "app1-lib0-childlib1": "libs/app1/lib0/childlib1",
     "app1-lib0-childlib2": "libs/app1/lib0/childlib2",
