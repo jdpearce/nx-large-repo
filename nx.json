@@ -18,8 +18,9 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
+        "url": "https://223.218.107.34.bc.googleusercontent.com",
         "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "accessToken": "ZDEyODE5ZTYtZGFhZC00YjE0LThiODItODQ5MTY0MzQzYWI5fHJlYWQtd3JpdGU="
+        "accessToken": "NzQwMWRlYTEtNzVhOS00ZjRjLWI3MjQtNzgzOGExNmJlYTIxfHJlYWQtd3JpdGU="
       }
     }
   },
