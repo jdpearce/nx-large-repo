@@ -11,14 +11,16 @@
       "dependencies": "*",
       "devDependencies": "*"
     },
-    ".eslintrc.json": "*"
+    ".eslintrc.json": "*",
+    ".github/workflows/main.yml": "*"
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
+        "url": "https://223.218.107.34.bc.googleusercontent.com",
         "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "accessToken": "YmZjN2JiN2ItNmMzYS00YWQzLTgzYjYtNjNiYjNjMGIwZTgwfHJlYWQtd3JpdGU="
+        "accessToken": "NzQwMWRlYTEtNzVhOS00ZjRjLWI3MjQtNzgzOGExNmJlYTIxfHJlYWQtd3JpdGU="
       }
     }
   },
