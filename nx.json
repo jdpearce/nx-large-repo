@@ -7,22 +7,14 @@
     "defaultCollection": "@nrwl/angular"
   },
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": "*",
     ".eslintrc.json": "*"
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "YTA5OTNiODktOGRlMC00ODRmLThhOTAtYTY3OGNiNzljNmMyfHJlYWQtd3JpdGU=",
         "url": "https://nx-api-staging.herokuapp.com/"
       }
