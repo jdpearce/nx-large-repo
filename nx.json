@@ -14,9 +14,14 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "accessToken": "YTA5OTNiODktOGRlMC00ODRmLThhOTAtYTY3OGNiNzljNmMyfHJlYWQtd3JpdGU=",
-        "url": "https://nx-api-staging.herokuapp.com/"
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ],
+        "accessToken": "MzE3ZjEwMWYtYjA0MC00OGE5LTkxMTctYzQ1YjYxYjQ2OTc5fHJlYWQtd3JpdGU=",
+        "url": "https://staging.nx.app/"
       }
     }
   },
