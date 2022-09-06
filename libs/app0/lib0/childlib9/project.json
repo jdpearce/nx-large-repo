@@ -1,6 +1,6 @@
 {
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/app0/lib0/childlib9",
   "sourceRoot": "libs/app0/lib0/childlib9/src",
   "prefix": "largerepo",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/app0/lib0/childlib9"],
       "options": {
-        "jestConfig": "libs/app0/lib0/childlib9/jest.config.js",
+        "jestConfig": "libs/app0/lib0/childlib9/jest.config.ts",
         "passWithNoTests": true
       }
     },
