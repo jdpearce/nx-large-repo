@@ -1,14 +1,14 @@
 {
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/app1/lib3/childlib6",
   "sourceRoot": "libs/app1/lib3/childlib6/src",
   "prefix": "largerepo",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/app1/lib3/childlib6"],
+      "outputs": ["{workspaceRoot}/coverage/libs/app1/lib3/childlib6"],
       "options": {
-        "jestConfig": "libs/app1/lib3/childlib6/jest.config.js",
+        "jestConfig": "libs/app1/lib3/childlib6/jest.config.ts",
         "passWithNoTests": true
       }
     },

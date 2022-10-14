@@ -113,5 +113,6 @@
     "app1-lib4-childlib8": "libs/app1/lib4/childlib8",
     "app1-lib4-childlib9": "libs/app1/lib4/childlib9",
     "app1-lib4-lib4": "libs/app1/lib4/lib4"
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
