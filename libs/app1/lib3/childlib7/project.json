@@ -6,7 +6,7 @@
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/app1/lib3/childlib7"],
+      "outputs": ["{workspaceRoot}/coverage/libs/app1/lib3/childlib7"],
       "options": {
         "jestConfig": "libs/app1/lib3/childlib7/jest.config.ts",
         "passWithNoTests": true
