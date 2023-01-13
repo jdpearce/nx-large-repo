@@ -112,7 +112,11 @@
     "app1-lib4-childlib7": "libs/app1/lib4/childlib7",
     "app1-lib4-childlib8": "libs/app1/lib4/childlib8",
     "app1-lib4-childlib9": "libs/app1/lib4/childlib9",
-    "app1-lib4-lib4": "libs/app1/lib4/lib4"
+    "app1-lib4-lib4": "libs/app1/lib4/lib4",
+    "app2": "apps/app2",
+    "app3": "apps/app3",
+    "app4": "apps/app4"
   },
-  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "defaultProject": "app0"
 }

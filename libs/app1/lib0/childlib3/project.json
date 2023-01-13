@@ -1,4 +1,5 @@
 {
+  "name": "app1-lib0-childlib3",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/app1/lib0/childlib3/src",
@@ -22,6 +23,5 @@
       }
     }
   },
-  "tags": [],
-  "name": "app1-lib0-childlib3"
+  "tags": []
 }
