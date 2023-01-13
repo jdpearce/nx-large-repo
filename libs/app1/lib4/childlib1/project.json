@@ -22,5 +22,6 @@
       }
     }
   },
-  "tags": []
+  "tags": [],
+  "name": "app1-lib4-childlib1"
 }

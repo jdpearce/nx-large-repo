@@ -1,31 +1,37 @@
-name: Distributed Lint, Test & Build
+name: Checks
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
 
-# Each push should cancel workflows in progress and start a new one
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
-  cancel-in-progress: true
+# # Each push should cancel workflows in progress and start a new one
+# concurrency:
+#   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+#   cancel-in-progress: true
 
 jobs:
-  main:
-    name: Main - Orchestrator
-    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.2
+  nxcloud_agents:
+    name: Nx Cloud - Agents
+    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.11
     with:
+      node-version: '16.x'
+      number-of-agents: 10
+
+  nxcloud_checks:
+    name: Nx Cloud - Checks
+    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.11
+    with:
+      node-version: '16.x'
+      number-of-agents: 10
+      init-commands: |
+        npx nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
       parallel-commands: |
-        npx nx workspace-lint
-        npx nx format:check
+        npx nx-cloud record -- npx nx workspace-lint
+        npx nx-cloud record -- npx nx format:check
       parallel-commands-on-agents: |
         npx nx affected --target=lint --parallel=3
-        npx nx affected --target=test --parallel=3 --ci --code-coverage
+        npx nx affected --target=test --parallel=1 --ci --code-coverage
         npx nx affected --target=build --parallel=3
-
-  agents:
-    name: Agents
-    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.2
-    with:
-      number-of-agents: 3
