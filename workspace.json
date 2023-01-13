@@ -113,6 +113,8 @@
     "app1-lib4-childlib8": "libs/app1/lib4/childlib8",
     "app1-lib4-childlib9": "libs/app1/lib4/childlib9",
     "app1-lib4-lib4": "libs/app1/lib4/lib4",
+    "app10": "apps/app10",
+    "app11": "apps/app11",
     "app2": "apps/app2",
     "app3": "apps/app3",
     "app4": "apps/app4",
