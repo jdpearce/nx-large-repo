@@ -116,7 +116,8 @@
     "app2": "apps/app2",
     "app3": "apps/app3",
     "app4": "apps/app4",
-    "app5": "apps/app5"
+    "app5": "apps/app5",
+    "app6": "apps/app6"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "defaultProject": "app0"
