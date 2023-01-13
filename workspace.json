@@ -115,7 +115,8 @@
     "app1-lib4-lib4": "libs/app1/lib4/lib4",
     "app2": "apps/app2",
     "app3": "apps/app3",
-    "app4": "apps/app4"
+    "app4": "apps/app4",
+    "app5": "apps/app5"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "defaultProject": "app0"
