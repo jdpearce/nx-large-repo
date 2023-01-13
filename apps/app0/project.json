@@ -1,6 +1,7 @@
 {
+  "name": "app0",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/app0",
   "sourceRoot": "apps/app0/src",
   "prefix": "largerepo",
   "targets": {
@@ -76,9 +77,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/app0"],
+      "outputs": ["{workspaceRoot}/coverage/apps/app0"],
       "options": {
-        "jestConfig": "apps/app0/jest.config.js",
+        "jestConfig": "apps/app0/jest.config.ts",
         "passWithNoTests": true
       }
     }

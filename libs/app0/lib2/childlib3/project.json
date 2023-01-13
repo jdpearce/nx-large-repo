@@ -1,14 +1,15 @@
 {
+  "name": "app0-lib2-childlib3",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/app0/lib2/childlib3",
   "sourceRoot": "libs/app0/lib2/childlib3/src",
   "prefix": "largerepo",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/app0/lib2/childlib3"],
+      "outputs": ["{workspaceRoot}/coverage/libs/app0/lib2/childlib3"],
       "options": {
-        "jestConfig": "libs/app0/lib2/childlib3/jest.config.js",
+        "jestConfig": "libs/app0/lib2/childlib3/jest.config.ts",
         "passWithNoTests": true
       }
     },
